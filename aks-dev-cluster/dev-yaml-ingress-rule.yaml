@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: dev-yaml-ingress-rule
-  namespace: dev-green-project-ns
+  namespace: dev-yaml-ns
   annotations:
     kubernetes.io/ingress.class: public-nginx          
     nginx.ingress.kubernetes.io/ssl-redirect: "false" 
