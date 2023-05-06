@@ -19,7 +19,7 @@ variables:
   # Agent VM image name
 pool:
   name: alokeagent
-  vmImage: 'jumpboxvm'
+  vmImageName: 'jumpboxvm'
 
 stages:
 - stage: Build
