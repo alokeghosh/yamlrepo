@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: greencontainer
-        image: devopesakscr.azurecr.io/devyamlacr:#{Build.BuildId}#
+        image: devopesakscr.azurecr.io/alokeghoshyamlrepo:#{Build.BuildId}#
         ports:
         - containerPort: 80
 
