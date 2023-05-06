@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: dev-yaml-ingress-rule
+  namespace: dev-green-project-ns
+  annotations:
+    kubernetes.io/ingress.class: public-nginx          
+    nginx.ingress.kubernetes.io/ssl-redirect: "false" 
+spec:
+  rules:
+  - host: devyamlproject.alokeg.local
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: yaml-svc
+            port: 
+              number: 80
