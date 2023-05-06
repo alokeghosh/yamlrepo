@@ -17,9 +17,9 @@ variables:
   tag: '$(Build.BuildId)'
 
   # Agent VM image name
-  pool:
-    name: alokeagent
-    vmImage: 'jumpboxvm'
+pool:
+  name: alokeagent
+  vmImage: 'jumpboxvm'
 
 stages:
 - stage: Build
