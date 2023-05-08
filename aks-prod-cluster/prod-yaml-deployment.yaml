@@ -1,0 +1,42 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: prod-yaml-ns  
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dev-yaml-deployment
+  namespace: prod-yaml-ns
+spec:
+  selector:
+    matchLabels:
+      app: yaml-prod
+  replicas: 2 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: yaml-prod
+    spec:
+      containers:
+      - name: greencontainer
+        image: devopesakscr.azurecr.io/alokeghoshyamlrepo:#{Build.BuildId}#
+        ports:
+        - containerPort: 80
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: prod-svc
+  namespace: prod-yaml-ns
+  labels:
+    service: prod-svc
+spec:
+  type: ClusterIP
+  selector:
+    app: yaml-prod
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
