@@ -1,4 +1,4 @@
 FROM nginx:latest
 MAINTAINER Aloke Ghosh
-RUN echo "-----------------Welcome To my yaml dev project-|| CI-CD pipeline with DEV and prod aks cluster------------------" > /usr/share/nginx/html/index.html
+RUN echo "-----------------Welcome To my yaml dev project-|| 99999999999999999999999999999999------------------" > /usr/share/nginx/html/index.html
 EXPOSE 80
