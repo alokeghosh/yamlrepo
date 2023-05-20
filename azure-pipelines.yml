@@ -38,3 +38,7 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
+    - task: CmdLine@2
+      inputs:
+        script: 'docker rmi -f devopesakscr.azurecr.io/alokeghoshyamlrepo:$(Build.BuildId)'
+
