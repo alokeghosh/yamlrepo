@@ -41,6 +41,11 @@ stages:
     - task: CmdLine@2
       inputs:
         script: 'docker rmi -f devopesakscr.azurecr.io/alokeghoshyamlrepo:$(Build.BuildId)'
+    - task: CopyFiles@2
+      inputs:
+        SourceFolder: '$(System.DefaultWorkingDirectory)/testhelp-chart'
+        Contents: '**'
+        TargetFolder: '$(Build.ArtifactStagingDirectory)'
     - task: PublishBuildArtifacts@1
       inputs:
         PathtoPublish: '$(Build.ArtifactStagingDirectory)'
