@@ -17,7 +17,7 @@ variables:
   tag: '$(Build.BuildId)'
 
   # Agent VM image name
-  vmImageName: 'ubuntu-latest'
+  vmImageName: 'jumpboxvm'
 
 stages:
 - stage: Build
@@ -26,6 +26,7 @@ stages:
   - job: Build
     displayName: Build
     pool:
+      name: alokeagent
       vmImage: $(vmImageName)
     steps:
     - task: Docker@2
